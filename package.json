@@ -1,0 +1,26 @@
+{
+  "name": "at-risk_housing",
+  "version": "1.0.0",
+  "description": "Project created for Mercy Housing Lakefront",
+  "main": "app.js",
+  "dependencies": {
+    "common.js": "^1.1.1",
+    "uniq": "^1.0.1",
+    "webpack": "^4.16.5",
+    "webpack-command": "^0.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "build": "browserify ./dist/main.js -o ./dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnchrishays"
+  },
+  "author": "Chris Hays",
+  "license": "ISC"
+}
