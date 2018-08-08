@@ -5,9 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "common.js": "^1.1.1",
-    "uniq": "^1.0.1",
-    "webpack": "^4.16.5",
-    "webpack-command": "^0.4.1"
+    "webpack": "^4.16.5"
   },
   "devDependencies": {
     "webpack": "^4.16.5",
@@ -15,7 +13,8 @@
   },
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
-    "build": "browserify ./dist/main.js -o ./dist/bundle.js"
+    "develop": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
