@@ -8,6 +8,7 @@ export default function load_tracts(map){
       paths: tracts[n]['coords'],
       strokeOpacity: 1,
       strokeWeight: .1,
+      fillColor: 'red',
       fillOpacity: 0
     });
     tracts_array.push({poly: temp, geoid: tracts[n]['geoid']});
