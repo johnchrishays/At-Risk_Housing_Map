@@ -1,5 +1,6 @@
 :root {
   --num-buttons: 2;
+  --button-opacity: 0.4;
 }
 .buttons {
   text-align: center;
@@ -11,10 +12,10 @@
   font-weight: bold;
 }
 #OZs {
-  background-color: #17263c;
+  background-color: rgba(255, 0, 0, var(--button-opacity));
 }
 #OAs {
-  background-color: #746855;
+  background-color: rgba(0, 0, 255, var(--button-opacity));
 }
 
 #map {

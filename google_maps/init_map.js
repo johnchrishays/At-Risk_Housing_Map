@@ -20,8 +20,8 @@ export function initMap() {
   });
   borders_array = load_counties(map); //load county borders
   tracts_array = load_tracts(map); //load census tracts. keys are poly and geoid
-  set_tracts_style(tracts_array, OZ_tract_nums, 'red', map);
-  set_tracts_style(tracts_array, QCT_tract_nums, 'blue', map);
+  set_tracts_style(tracts_array, OZ_tract_nums, 0, 'red', map);
+  set_tracts_style(tracts_array, QCT_tract_nums, 1, 'blue', map);
   return map;
 }
 
