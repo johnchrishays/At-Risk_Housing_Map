@@ -1,0 +1,30 @@
+:root {
+  --num-buttons: 2;
+}
+.buttons {
+  text-align: center;
+  width: calc(97% / var(--num-buttons));
+  color: #FFF;
+  padding: 10px;
+  float: left;
+  font-family: 'Tahoma';
+  font-weight: bold;
+}
+#OZs {
+  background-color: #17263c;
+}
+#counties {
+  background-color: #746855;
+}
+
+#map {
+  height: calc(100% - 40px);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+br{
+	clear: both;
+}
