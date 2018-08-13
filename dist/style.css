@@ -1,10 +1,10 @@
 :root {
-  --num-buttons: 2;
+  --num-buttons: 3;
   --button-opacity: 0.4;
 }
 .buttons {
   text-align: center;
-  width: calc(97% / var(--num-buttons));
+  width: calc(94% / var(--num-buttons));
   color: #FFF;
   padding: 10px;
   float: left;
@@ -16,6 +16,9 @@
 }
 #OAs {
   background-color: rgba(0, 0, 255, var(--button-opacity));
+}
+#affordable_market_share {
+  background-color: rgba(0, 255, 0, var(--button-opacity));
 }
 
 #map {

@@ -2,9 +2,9 @@ import initAutocomplete from "../interactivity/search_bar.js";
 import load_tracts from "./load_census_tracts.js";
 import load_counties from "./load_county_borders.js";
 import {set_tracts_style} from "./set_tracts_style.js";
+import {set_tracts_style_gradient} from "./set_tracts_style_gradient.js";
 var OZ_tract_nums = require('../shapefiles/OZs/IL_QAZs_tract_nums.json');
 var QCT_tract_nums = require('../shapefiles/OAs/IL_QCTs_tract_nums.json');
-
 var tracts_array;
 var borders_array;
 
@@ -25,7 +25,7 @@ export function initMap() {
   tracts_array = load_tracts(map); //load census tracts. keys are poly and geoid
   set_tracts_style(tracts_array, OZ_tract_nums, 0, 'red', map);
   set_tracts_style(tracts_array, QCT_tract_nums, 1, 'blue', map);
-
+  set_tracts_style_gradient(tracts_array, 2, 'green', map);
   //load search bar
   initAutocomplete(map);
 

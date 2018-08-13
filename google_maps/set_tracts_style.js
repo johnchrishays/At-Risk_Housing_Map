@@ -9,6 +9,7 @@ export function set_tracts_style(tracts_array, tract_nums, poly_index, color, ma
   }
 }
 
+
 //poly_index = the index of which poly is being referenced given the array system set up in load_census_tracts.js
 //color = the color of the tracts
 export function toggle_data_visibility(tracts_array, tract_nums, poly_index, color, map){ //map might be null or map

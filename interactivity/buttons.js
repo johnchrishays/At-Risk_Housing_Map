@@ -2,6 +2,7 @@ import {toggle_data_visibility} from '../google_maps/set_tracts_style.js';
 import {tracts_array} from '../google_maps/init_map.js';
 var OZ_tract_nums = require('../shapefiles/OZs/IL_QAZs_tract_nums.json');
 var QCT_tract_nums = require('../shapefiles/OAs/IL_QCTs_tract_nums.json');
+var affordable_market_share = require('../shapefiles/indicators/affordable_market_share.json');
 
 //switches colors of button when pushed. element = button
 export function toggleButtonVisuals(element, toggle){ //1 = on, 0 = off
@@ -34,6 +35,14 @@ export function addButtonListeners(map){
           tract_nums = QCT_tract_nums;
           color = 'blue';
           poly_index = 1;
+        }
+        else if(element.id == 'affordable_market_share') {
+          tract_nums = [];
+          for (var i=0; i<affordable_market_share.length; i++) {
+            tract_nums.push(affordable_market_share[i].geoid);
+          }
+          color = 'green';
+          poly_index = 2;
         }
         if(selected){ //then turn visibility off
           whichmap = null;

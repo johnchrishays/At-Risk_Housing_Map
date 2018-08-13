@@ -1,11 +1,12 @@
 var tracts = require("../shapefiles/IL_census_tracts.json");
+var NUM_LAYERS = 3;
 
 export default function load_tracts(map){
   var tracts_array = [];
   var temp;
   for(var n=0; n<tracts.length; n++){
     var temp_poly_list = [];
-    for(var j=0; j<2; j++){
+    for(var j=0; j<NUM_LAYERS; j++){
       temp = new google.maps.Polygon({
         paths: tracts[n]['coords'],
         strokeOpacity: 1,
