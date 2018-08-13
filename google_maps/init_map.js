@@ -25,7 +25,7 @@ export function initMap() {
   tracts_array = load_tracts(map); //load census tracts. keys are poly and geoid
   set_tracts_style(tracts_array, OZ_tract_nums, 0, 'red', map);
   set_tracts_style(tracts_array, QCT_tract_nums, 1, 'blue', map);
-  set_tracts_style_gradient(tracts_array, 2, 'green', map);
+  set_tracts_style_gradient(tracts_array, 2, 'orange', map);
   //load search bar
   initAutocomplete(map);
 

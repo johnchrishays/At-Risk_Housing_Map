@@ -6,6 +6,8 @@ export default function load_tracts(map){
   var temp;
   for(var n=0; n<tracts.length; n++){
     var temp_poly_list = [];
+    //this allows me to have multiple colors overlapping on the map. I actually set up multiple polys
+    //thus, depending on tracts_array.polys[i], I can turn off and on multiple census tracts
     for(var j=0; j<NUM_LAYERS; j++){
       temp = new google.maps.Polygon({
         paths: tracts[n]['coords'],
