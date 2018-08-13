@@ -1,5 +1,5 @@
-var tracts = require("../shapefiles/IL_census_tracts.json");
-var NUM_LAYERS = 3;
+var tracts = require("../static_data/IL_census_tracts.json");
+var NUM_BUTTONS = 5;
 
 export default function load_tracts(map){
   var tracts_array = [];
@@ -8,7 +8,7 @@ export default function load_tracts(map){
     var temp_poly_list = [];
     //this allows me to have multiple colors overlapping on the map. I actually set up multiple polys
     //thus, depending on tracts_array.polys[i], I can turn off and on multiple census tracts
-    for(var j=0; j<NUM_LAYERS; j++){
+    for(var j=0; j<NUM_BUTTONS; j++){
       temp = new google.maps.Polygon({
         paths: tracts[n]['coords'],
         strokeOpacity: 1,

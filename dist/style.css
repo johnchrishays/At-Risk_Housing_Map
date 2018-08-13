@@ -1,28 +1,38 @@
 :root {
-  --num-buttons: 3;
-  --button-opacity: 0.4;
+  --num-buttons-per-row: 3;
+  --num-rows: 2;
+  --button-opacity: 0.6;
+  --button-height: 40px;
 }
 .buttons {
   text-align: center;
-  width: calc(94% / var(--num-buttons));
-  color: #FFF;
+  box-sizing: border-box;
+  box-height: var(--button-height);
+  width: calc(100% / var(--num-buttons-per-row) - 1.5%);
+  background-color: #FFF;
   padding: 10px;
   float: left;
   font-family: 'Tahoma';
-  font-weight: bold;
+  font-weight: normal;
 }
 #OZs {
-  background-color: rgba(255, 0, 0, var(--button-opacity));
+  color: rgba(255, 0, 0, var(--button-opacity));
 }
-#OAs {
-  background-color: rgba(0, 0, 255, var(--button-opacity));
+#QCTs {
+  color: rgba(0, 128, 128, var(--button-opacity));
 }
 #affordable_market_share {
-  background-color: rgba(255, 165, 0, var(--button-opacity));
+  color: rgba(255, 165, 0, var(--button-opacity));
+}
+#OAs {
+  color: rgba(0, 0, 128, var(--button-opacity));
+}
+#proximate_OAs {
+  color: rgba(135, 206, 235, var(--button-opacity));
 }
 
 #map {
-  height: calc(100% - 40px);
+  height: calc(100% - calc(40px * var(--num-rows)));
 }
 html, body {
   height: 100%;

@@ -6,8 +6,3 @@ Sources for the shapefiles in this directory:
   * https://data.cityofchicago.org/resource/qqq8-j68g.geojson
 * *census tract shapefiles:* collected from U.S. Census Bureau KML Cartographic Boundary Files page
   * https://www.census.gov/geo/maps-data/data/kml/kml_tracts.html
-* *opportunity zones:* collected from CDFI Fund of the Dept. of the Treasury (updated 6.14.18)
-  * https://www.cdfifund.gov/Pages/Opportunity-Zones.aspx
-* *opportunity areas:* collected from HUD Qualified Census Tract Generator for IL
-  * https://qct.huduser.gov
-  * https://qct.huduser.gov/tables/1statetable.odb?statefp=17.0&DDAYEAR=2018 specifically

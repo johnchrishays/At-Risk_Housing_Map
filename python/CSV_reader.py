@@ -5,19 +5,27 @@ def make_QOZ_as_json():
     df = df.rename(columns=df.iloc[3])
     df = df.rename(columns={'Click arrow to filter state\n\nState': 'State'})
     illinois_df = df[df['State']=='Illinois']
-    #lic_df = illinois_df[df['Tract Type'] == 'Low-Income Community']
-    #adjacent_df = illinois_df[df['Tract Type'] == 'Non-LIC Contiguous']
 
     tract_nums = illinois_df.loc[:,'Census Tract Number'].tolist()
-    #lic_tract_nums = lic_df.loc[:,'Census Tract Number'].tolist()
-    #adjacent_tract_nums = adjacent_df.loc[:,'Census Tract Number'].tolist()
 
     tract_nums = [int(x) for x in tract_nums]
-    #lic_tract_nums = [int(x) for x in lic_tract_nums]
-    #adjacent_tract_nums = [int(x) for x in adjacent_tract_nums]
 
     f = open('../OZs/QAZs.json', 'w')
     f.write(str(tract_nums))
+    f.close()
+
+def opportunity_areas_to_json():
+    df = pd.read_csv('../static_data/OAs/opportunity_area_tract_designations.csv')
+    trimmed_df = df[pd.notna(df['State'])]
+    geoids = [int(x) for x in trimmed_df['Census Tract']]
+    designations = [str(x) for x in trimmed_df['Opportunity Area Status, 2018.']]
+    length = len(geoids)
+    text_list = []
+    for i in range(length):
+        text_list.append('{"geoid":'+str(geoids[i])+',"opportunity_area_status":"'+designations[i]+'"}')
+    text = ", ".join(text_list)
+    f = open('../static_data/OAs/opportunity_area_tract_designations.json', 'w')
+    f.write("[" + text + "]")
     f.close()
 
 def affordable_market_share_to_json():
@@ -34,4 +42,4 @@ def affordable_market_share_to_json():
     f.write("[" + text + "]")
     f.close()
 
-affordable_market_share_to_json()
+opportunity_areas_to_json()
