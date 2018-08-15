@@ -19,6 +19,6 @@ def extract_tracts(year):
                 tract_list.append(int(link['href'][-11:]))
     return tract_list
 
-tracts = open('../shapefiles/OAs.json', 'w')
+tracts = open('../static_data/QCTs/IL_QCTs_tract_nums.json', 'w')
 tracts.write(str(extract_tracts(2018)))
 tracts.close()

@@ -42,4 +42,20 @@ def affordable_market_share_to_json():
     f.write("[" + text + "]")
     f.close()
 
-opportunity_areas_to_json()
+def select_IL_place_names():
+    df = pd.read_excel('../static_data/OAs/IHDA_OA_places.xlsx')
+    no_tract = df.loc[df['Census Tract (if applicable)'].isnull()]
+    place_list = no_tract['Place'].tolist()
+    place_list = [i[:-1] for i in place_list]
+    return place_list
+
+def select_OA_census_tracts():
+    df = pd.read_excel('../static_data/OAs/IHDA_OA_places.xlsx')
+    has_tract = df.loc[df['Census Tract (if applicable)'].notnull()]
+    place_list = has_tract['Census Tract (if applicable)'].tolist()
+    place_list = [int(i) for i in place_list]
+    f = open('../static_data/OAs/IHDA_OA_tract_nums.json', 'w')
+    f.write(str(place_list))
+    f.close()
+
+select_OA_census_tracts()
