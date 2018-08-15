@@ -28,17 +28,17 @@ def opportunity_areas_to_json():
     f.write("[" + text + "]")
     f.close()
 
-def affordable_market_share_to_json():
-    df = pd.read_csv('../shapefiles/indicators/affordable_market_share.csv')
-    trimmed_df = df[pd.notna(df['Affordable market share, as of 2018.'])]
+def gradient_kml_to_json(input_file, output_file, data_type):
+    df = pd.read_csv(input_file)
+    trimmed_df = df[pd.notna(df[data_type])]
     geoids = [int(x) for x in trimmed_df['Census Tract']]
-    ams = [float('%.3g' % (float(x) / 100)) for x in trimmed_df['Affordable market share, as of 2018.']] #found online as a way to control sig figs
+    ams = [float('%.3g' % (float(x))) for x in trimmed_df[data_type]] #found online as a way to control sig figs
     length = len(geoids)
     text_list = []
     for i in range(length):
-        text_list.append('{"geoid":'+str(geoids[i])+',"affordable_market_share":'+str(ams[i])+'}')
+        text_list.append('{"geoid":'+str(geoids[i])+',"val":'+str(ams[i])+'}')
     text = ", ".join(text_list)
-    f = open('../shapefiles/indicators/affordable_market_share.json', 'w')
+    f = open(output_file, 'w')
     f.write("[" + text + "]")
     f.close()
 
@@ -46,8 +46,15 @@ def select_IL_place_names():
     df = pd.read_excel('../static_data/OAs/IHDA_OA_places.xlsx')
     no_tract = df.loc[df['Census Tract (if applicable)'].isnull()]
     place_list = no_tract['Place'].tolist()
-    place_list = [i[:-1] for i in place_list]
-    return place_list
+    place_list = [i.rstrip() for i in place_list]
+    place_list.sort()
+    string_list = []
+    for i in place_list:
+        string_list.append('"' + i + '"')
+    string = ','.join(string_list)
+    f = open('../static_data/OAs/IDHA_OA_places.json', 'w')
+    f.write('[' + string + ']')
+    f.close()
 
 def select_OA_census_tracts():
     df = pd.read_excel('../static_data/OAs/IHDA_OA_places.xlsx')
@@ -58,4 +65,5 @@ def select_OA_census_tracts():
     f.write(str(place_list))
     f.close()
 
-select_OA_census_tracts()
+#gradient_kml_to_json('../static_data/indicators/travel_time_to_work.csv', '../static_data/indicators/travel_time_to_work.json', 'Mean travel time to work in minutes, according the US Census Bur')
+select_IL_place_names()

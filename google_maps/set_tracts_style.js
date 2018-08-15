@@ -25,12 +25,12 @@ export function set_tracts_style(tracts_array, tract_nums_to_style, poly_index, 
 //poly_index = the index of which poly is being referenced given the array system set up in load_census_tracts.js
 //color = the color of the tracts
 export function toggle_data_visibility(tracts_array, poly_index, map, transit_layer){ //map might be null or map
-  if(poly_index == 5) { //special case: for the transit layer
+  if(poly_index == 4) { //special case: for the transit layer
     transit_layer.setMap(map); //this is actually not an array in this case
     return;
   }
   for (var i=0; i<tracts_array.length; i++){
-  tracts_array[i]['polys'][poly_index].setMap(map);
+    tracts_array[i]['polys'][poly_index].setMap(map);
   }
 }
 

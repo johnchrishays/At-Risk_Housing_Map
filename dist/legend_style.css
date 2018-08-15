@@ -1,0 +1,14 @@
+#legend {
+  background: #FFF;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  margin: 10px;
+}
+
+.swatch {
+  background: orange;
+  height: 12px;
+  float: left;
+  width: 12px;
+  margin: 2px;
+}

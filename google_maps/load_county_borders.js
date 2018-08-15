@@ -1,4 +1,4 @@
-var borders = require("../static_data/IL_counties.json");
+var borders = require("../shapefiles/IL_counties.json");
 
 export default function load_counties(map){
   var borders_array = [];

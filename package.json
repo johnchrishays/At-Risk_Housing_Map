@@ -2,7 +2,7 @@
   "name": "at-risk_housing",
   "version": "1.0.0",
   "description": "Project created for Mercy Housing Lakefront",
-  "main": "app.js",
+  "main": "main.js",
   "dependencies": {
     "common.js": "^1.1.1",
     "webpack": "^4.16.5"
