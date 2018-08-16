@@ -1,5 +1,5 @@
 :root {
-  --num-buttons-per-row: 3;
+  --num-buttons-per-row: 4;
   --button-opacity: 0.6;
   --button-height: 40px;
 }
@@ -20,3 +20,4 @@
 #OAs {color: rgba(0, 0, 128, var(--button-opacity));}
 #transit {color: rgba(47, 79, 79, var(--button-opacity));}
 #travel_time {color: rgba(165, 42, 42, var(--button-opacity));}
+#hospitals {color: rgba(255, 0, 0, var(--button-opacity));}

@@ -3,7 +3,8 @@ import initAutocomplete from "../interactivity/search_bar.js";
 //basic US census geometry
 import load_tracts from "./load_census_tracts.js";
 import load_counties from "./load_county_borders.js";
-import load_places from "./load_IL_places";
+import load_places from "./load_IL_places.js";
+import {load_markers} from "./load_markers.js"
 //used to shade tracts/places
 import {set_tracts_style} from "./set_tracts_style.js";
 import {set_places_style} from "./set_places_style.js";
@@ -20,9 +21,10 @@ affordable_market_share_places.sort(function(a, b){return a.geoid > b.geoid})
 var travel_time_to_work = require('../static_data/indicators/travel_time_to_work.json')
 var travel_time_to_work_places = require('../static_data/indicators/travel_time_to_work_places.json')
 travel_time_to_work_places.sort(function(a, b){return a.geoid > b.geoid})
+var hospitals = require('../static_data/indicators/IL_hospitals.json')
 
 //these need to be global because they are exported and passed into various functions
-var tracts_array, borders_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array;
+var tracts_array, borders_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array, hospitals_array;
 
 export function initMap() {
   //boiler plate to select zoom and center of map
@@ -43,6 +45,8 @@ export function initMap() {
   OA_places_array = load_places(map); //load places, which is U.S. Census Bureau language for municipalities etc.
   travel_time_places_array = load_places(map);
   affordable_market_share_places_array = load_places(map);
+  hospitals_array = load_markers(hospitals, 'H', null);
+  // or maybe set up for https://www.google.com/maps/vt/icon/name=assets/icons/poi/tactile/pinlet_shadow-2-medium.png
 
   //set initial state of each overlay
   set_tracts_style(tracts_array, OZ_tract_nums, 0, 'red', null);
@@ -61,4 +65,4 @@ export function initMap() {
   return map;
 }
 
-export {tracts_array, borders_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array};
+export {tracts_array, borders_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array, hospitals_array};

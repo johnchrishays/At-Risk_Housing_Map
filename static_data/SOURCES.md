@@ -12,3 +12,11 @@ Sources for the data in this directory:
   * QAP: https://www.ihda.org/wp-content/uploads/2017/10/2018-2019_QAP_Final.pdf
 * *affordable market share:* this comes from the IDHA Policy Map on Qualified Census Tracts
   * https://www.ihda.org/developers/market-research/opportunity-areas/
+  * on the map, select New Map > Determination Metrics > Affordable Market Share
+* *transit:* this comes from the Google Maps API service. It is as accurate as Google Maps itself.
+  * https://developers.google.com/maps/documentation/javascript/examples/layer-transit
+* *mean travel time to work:* this comes from the IDHA Policy Map on Qualified Census Tracts
+  * https://www.ihda.org/developers/market-research/opportunity-areas/
+  * on the map, select New Map > Determination Metrics > Average Travel Time To Work
+* *IHA member hospitals:* collected from the Illinois Health and Hospital Association
+  * https://www.team-iha.org/member-resources/hospital-directory#tabs-horizontal1

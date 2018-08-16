@@ -1,7 +1,8 @@
 import {toggle_data_visibility} from '../google_maps/set_tracts_style.js';
 import {toggle_data_visibility_places} from '../google_maps/set_places_style.js';
-import {tracts_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array} from '../google_maps/init_map.js';
+import {tracts_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array, hospitals_array} from '../google_maps/init_map.js';
 import {create_legend, destroy_legend} from "./legend.js";
+import {toggle_markers_visibility} from "../google_maps/load_markers.js"
 
 //switches colors of button when pushed. element = button
 export function toggleButtonVisuals(element, toggle){ //1 = on, 0 = off
@@ -54,6 +55,11 @@ export function addButtonListeners(map){
             toggle_data_visibility_places(travel_time_places_array, whichmap);
             if(!selected) create_legend(poly_index, map);
             else destroy_legend(map);
+            break;
+          case 'hospitals':
+            poly_index = 6;
+            toggle_markers_visibility(hospitals_array, whichmap);
+            break;
         }
         selected = !selected; //important that this line goes before toggleButtonVisuals
         toggleButtonVisuals(element, selected);

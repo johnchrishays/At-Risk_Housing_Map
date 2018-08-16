@@ -29,6 +29,9 @@ export function toggle_data_visibility(tracts_array, poly_index, map, transit_la
     transit_layer.setMap(map); //this is actually not an array in this case
     return;
   }
+  if(poly_index == 6) { //special case: for the hospitals layer
+    return;
+  }
   for (var i=0; i<tracts_array.length; i++){
     tracts_array[i]['polys'][poly_index].setMap(map);
   }
