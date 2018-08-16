@@ -28,15 +28,15 @@ def opportunity_areas_to_json():
     f.write("[" + text + "]")
     f.close()
 
-def gradient_kml_to_json(input_file, output_file, data_type):
+def gradient_csv_to_json(input_file, output_file, data_type):
     df = pd.read_csv(input_file)
     trimmed_df = df[pd.notna(df[data_type])]
-    geoids = [int(x) for x in trimmed_df['Census Tract']]
-    ams = [float('%.3g' % (float(x))) for x in trimmed_df[data_type]] #found online as a way to control sig figs
+    geoids = [x for x in trimmed_df['City']]
+    ams = [float('%.3g' % (float(x)/100)) for x in trimmed_df[data_type]] #found online as a way to control sig figs
     length = len(geoids)
     text_list = []
     for i in range(length):
-        text_list.append('{"geoid":'+str(geoids[i])+',"val":'+str(ams[i])+'}')
+        text_list.append('{"geoid":"'+str(geoids[i])+'","val":'+str(ams[i])+'}')
     text = ", ".join(text_list)
     f = open(output_file, 'w')
     f.write("[" + text + "]")
@@ -66,4 +66,4 @@ def select_OA_census_tracts():
     f.close()
 
 #gradient_kml_to_json('../static_data/indicators/travel_time_to_work.csv', '../static_data/indicators/travel_time_to_work.json', 'Mean travel time to work in minutes, according the US Census Bur')
-select_IL_place_names()
+gradient_csv_to_json("../static_data/indicators/affordable_market_share_places.csv", "../static_data/indicators/affordable_market_share_places.json", "Affordable market share, as of 2018.")

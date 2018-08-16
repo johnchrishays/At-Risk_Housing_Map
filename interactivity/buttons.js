@@ -1,6 +1,6 @@
 import {toggle_data_visibility} from '../google_maps/set_tracts_style.js';
 import {toggle_data_visibility_places} from '../google_maps/set_places_style.js';
-import {tracts_array, places_array} from '../google_maps/init_map.js';
+import {tracts_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array} from '../google_maps/init_map.js';
 import {create_legend, destroy_legend} from "./legend.js";
 
 //switches colors of button when pushed. element = button
@@ -28,7 +28,6 @@ export function addButtonListeners(map){
       element.addEventListener("click", function(){
         if(selected) whichmap = null;//then turn visibility off
         else whichmap = map; //then turn visibility on
-        selected = !selected; //important that this line goes before toggleButtonVisuals
         switch(element.id){
           case 'OZs':
             poly_index = 0;
@@ -38,18 +37,25 @@ export function addButtonListeners(map){
             break;
           case 'affordable_market_share':
             poly_index = 2;
-            if(selected) create_legend(poly_index, map);
-            else destroy_legend();
+            if(!selected) create_legend(poly_index, map);
+            else destroy_legend(map);
+            toggle_data_visibility_places(affordable_market_share_places_array, whichmap);
             break;
           case 'OAs':
             poly_index = 3;
-            toggle_data_visibility_places(places_array, whichmap)
+            toggle_data_visibility_places(OA_places_array, whichmap);
             break;
           case 'transit':
             transit = transit_layer;
             poly_index = 4;
             break;
+          case 'travel_time':
+            poly_index = 5;
+            toggle_data_visibility_places(travel_time_places_array, whichmap);
+            if(!selected) create_legend(poly_index, map);
+            else destroy_legend(map);
         }
+        selected = !selected; //important that this line goes before toggleButtonVisuals
         toggleButtonVisuals(element, selected);
         toggle_data_visibility(tracts_array, poly_index, whichmap, transit);
       });

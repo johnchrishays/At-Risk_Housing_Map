@@ -6,8 +6,8 @@ export function set_tracts_style_gradient(tracts_array, gradient_array, poly_ind
   for (var i=0; i<gradient_array.length; i++){
     while(tracts_array[j].geoid < gradient_array[i].geoid){
       j++;
-      tracts_array[j]['polys'][poly_index].fillColor = 'gray';
-      tracts_array[j]['polys'][poly_index].fillOpacity = .3;
+      //tracts_array[j]['polys'][poly_index].fillColor = 'gray';
+      //tracts_array[j]['polys'][poly_index].fillOpacity = .3;
       tracts_array[j]['polys'][poly_index].setMap(map);
     }
     if(gradient_array[i].geoid == tracts_array[j].geoid){
