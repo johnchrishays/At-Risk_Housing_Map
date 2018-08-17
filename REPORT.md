@@ -2,42 +2,16 @@
 ###Mercy Housing Lakefront: Resource Development
 ###Aug. 17th, 2018
 
+#Summary:
+This mapping research tool is targeted for the uses of real estate development prospecting and statewide low-income housing analysis. For low-income housing real estate developers, it should provide a sense of where government tax programs overlap and where amenities like medical care or transportation overlap. This should allow the real estate developer to narrow in on particular towns or neighborhoods where development might be most feasible. It is oriented towards at-a-glance research of a broad range of characteristics rather than detailed information about just a few characteristics. All data is updated to August 2018, but as a point-in-time map, the data will not update automatically. For low-income housing researchers and analysts, the tool will provide a geographic picture of how housing indicators like the amount of affordable housing interact with government tax incentive programs. While I am confident that my data is accurate, there may be areas where government data was not collected or where browsers for whatever reason do not render the data. Take the data in this tool with a grain of salt, so if you see something that seems wrong, check with another reputable source. See the README document for instructions on use.
+
 #Research Questions:
-Where do low-income housing tax incentives and at-risk housing overlap? This housing might be two- to four-flats or large buildings. Anything larger than single-family.) Is there an opportunity for MHL to preserve low-income housing in gentrifying neighborhoods, particularly to serve re-entry populations? Are there low-income housing shortages in OZs?
-* What publicly accessible indicators of at-risk housing conversions already exist? What are the key factors that indicate at-risk housing and/or gentrification?
-* Are there important characteristics of re-entry population employment, education, health that should be considered? (I.e. Should we think about employment opportunities in the areas where MHL might consider developing?)
-* Are there long-term vacancy rates and/or housing shortage indicators that might provide insight?
-* Other indicators worth considering: # of bedrooms per apartment (for re-entry mothers) or avg square footage, access to resources like public transportation or IL Qualified Allocation Plan from IDA characteristics
-
-#Data Availability:
-##Housing stock composition:
-* Institute for Housing Studies at DePaul University
-  * Scale: Chicago Community Areas (which roughly correspond to neighborhoods), Wards or larger scale
-  * Timespan: just 2015
-  * Data -- https://www.housingstudies.org/dataportal/composition/housing-units-composition/chicago-community-areas/2015/2015/ (seems to come from Assessor’s Office, although I don’t know how they did it)
-  * Landing page -- https://www.housingstudies.org/research-publications/publications/composition-cook-countys-housing-market/  
-* Opportunity Zones:
-  * Enterprise Community
-  * https://www.enterprisecommunity.org/opportunity360/opportunity-zone-eligibility-tool
-* Policy Map (has opportunity areas among other things, came out of MHL)
-
-##Gentrification:
-* Institute for Housing Studies at DePaul University
-  * Includes property sales data, mortgage data, foreclosure filings data and vacancy data
-  * Background + data -- https://www.housingstudies.org/page/ihs-data-projects/
-* Partnership Organizations:
-  * NowPow list of Chicago Service Providers
-
-#Scope:
-##Questions:
-* What medium will convey this information best?
-* Who is the target audience? What is the best case scenario for this?
-* What geographic region will be most useful. Is it just Cook County, or also DuPage and Lake?
-#Preliminary Findings / Guesses
-##OZ/2- to 4- flat overlap:
-* Neighborhoods containing OZs with the highest proportion of 2- to 4- flat housing
-  * West: Humboldt Park (57%), West Garfield (65%), North Lawndale (57%)
-  * South: Fuller Park (66%), New City (70%), Englewood/West Englewood (~50% but almost totally covered by OZ tracts)  
+* What are the intersections of government low-income community development tax policy and various indicators of quality of life?
+* Is there an opportunity for MHL to preserve low-income housing in gentrifying neighborhoods, find amenity-rich, low-income areas where development will be feasible, or foresee gentrification?
+* Are there low-income housing shortages in the 2017 Tax Policy Opportunity Zones?
+* What publicly accessible indicators of at-risk housing and resource rich areas already exist? What are the key factors that indicate at-risk housing and/or gentrification?
+* How do various federal or state development tax policies interact with each other?
+* Other indicators worth considering if this tool were to be expanded: large anchor institutions or large employers, # of bedrooms per apartment (for re-entry mothers) or avg square footage, access to resources like public transportation or IHDA characteristics that go into their QAP 9% tax allocations.
 
 #Description of data types included in the tool:
 * Opportunity Zones: Originally introduced in the Investing in Opportunity Act (IIOA), the Opportunity Zones Program was enacted as part of the 2017 tax reform package (Tax Cuts and Jobs Act). The program is designed to drive long-term capital to rural and low-income urban communities throughout the nation, and uses tax incentives to encourage private investment in impact funds.
@@ -47,3 +21,27 @@ Where do low-income housing tax incentives and at-risk housing overlap? This hou
 * Mean travel time to work: Mean travel time to work is an indication of how long it takes people to get to their jobs. Unlike other indicators of transportation / job access this metric does not presume a need to access public transportation or multiple nodes of travel – though this metric doesn’t discount this type of access either. Eligible geographies must be above or below (as appropriate) a threshold benchmark in ALL Major Determination Metric categories to qualify as Opportunity Areas. Data is not shown for places with population under 1,000.
 * IHA Member Hospitals: A pretty good indication of where all the hospitals in IL are. The IHA (Illinois Health and Hospital Association) has member hospitals all over the state.
 * USDA Food Desserts: As defined by the USDA, a low access tract at 1 mile for urban areas and 10 miles for rural areas. This does NOT completely align with IHDA guidelines for Opportunity Area scoring, since the city of Chicago has a stricter 0.5 mile radius for what should be considered a food dessert. This will help rule out places that clearly do not fall under IHDA guidelines and is accurate for everywhere except the city of Chicago.
+
+#Background Resources and Reading:
+##Housing stock composition:
+* Institute for Housing Studies at DePaul University
+  * Scale: Chicago Community Areas (which roughly correspond to neighborhoods), Wards or larger scale
+  * Timespan: just 2015
+  * Data -- https://www.housingstudies.org/dataportal/composition/housing-units-composition/chicago-community-areas/2015/2015/ (seems to come from Assessor’s Office, although I don’t know how they did it)
+  * Landing page -- https://www.housingstudies.org/research-publications/publications/composition-cook-countys-housing-market/
+##Opportunity Zones:
+  * Enterprise Community
+  * https://www.enterprisecommunity.org/opportunity360/opportunity-zone-eligibility-tool
+* PolicyMap has various different types of searchable software
+##Gentrification:
+* Institute for Housing Studies at DePaul University
+  * Includes property sales data, mortgage data, foreclosure filings data and vacancy data
+  * Background + data -- https://www.housingstudies.org/page/ihs-data-projects/
+* Partnership Organizations:
+  * NowPow list of Chicago Service Providers
+
+#Limitations
+* Comprehensiveness: This tool only captures 8 layers of data related to low-income housing development. There are far, far more metrics that I wish I had time to include: large employers, anchor institutions, type of housing, walkability, number of bedrooms per apartment, access to partner community health and advocacy organizations, and many more.
+* Updatability: All data included in the map is the most updated data available as of August 2018. As new tax programs are implemented or census tracts and places are re-designated, the map will not update itself.
+* Accuracy: In certain browsers, some of the data does not render. I could never figure out why this was the case, but it is safe to say the tool works best in Safari and Firefox.
+* Speed: The page usually takes ~10 seconds to load all of the data, which is a result of the large quantity of data included in the tool. Most other mapping tools that I found were not significantly faster than this, but it certainly slows down research if the tool stops working and you have to reload the page.
