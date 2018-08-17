@@ -60,6 +60,9 @@ export function addButtonListeners(map){
             poly_index = 6;
             toggle_markers_visibility(hospitals_array, whichmap);
             break;
+          case 'food_deserts':
+            poly_index = 7;
+            break;
         }
         selected = !selected; //important that this line goes before toggleButtonVisuals
         toggleButtonVisuals(element, selected);

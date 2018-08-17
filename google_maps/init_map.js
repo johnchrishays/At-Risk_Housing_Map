@@ -16,12 +16,13 @@ var QCT_tract_nums = require('../static_data/QCTs/IL_QCTs_tract_nums.json');
 var OA_tract_nums = require('../static_data/OAs/IHDA_OA_tract_nums.json');
 var OA_place_names = require('../static_data/OAs/IDHA_OA_places.json');
 var affordable_market_share = require('../static_data/indicators/affordable_market_share.json');
-var affordable_market_share_places = require('../static_data/indicators/affordable_market_share_places.json')
-affordable_market_share_places.sort(function(a, b){return a.geoid > b.geoid})
-var travel_time_to_work = require('../static_data/indicators/travel_time_to_work.json')
-var travel_time_to_work_places = require('../static_data/indicators/travel_time_to_work_places.json')
-travel_time_to_work_places.sort(function(a, b){return a.geoid > b.geoid})
-var hospitals = require('../static_data/indicators/IL_hospitals.json')
+var affordable_market_share_places = require('../static_data/indicators/affordable_market_share_places.json');
+affordable_market_share_places.sort(function(a, b){return a.geoid > b.geoid});
+var travel_time_to_work = require('../static_data/indicators/travel_time_to_work.json');
+var travel_time_to_work_places = require('../static_data/indicators/travel_time_to_work_places.json');
+travel_time_to_work_places.sort(function(a, b){return a.geoid > b.geoid});
+var hospitals = require('../static_data/indicators/IL_hospitals.json');
+var food_access = require('../static_data/indicators/food_access.json');
 
 //these need to be global because they are exported and passed into various functions
 var tracts_array, borders_array, OA_places_array, travel_time_places_array, affordable_market_share_places_array, hospitals_array;
@@ -57,6 +58,8 @@ export function initMap() {
   set_places_style(OA_places_array, OA_place_names, 'navy', null);
   set_tracts_style_gradient(tracts_array, travel_time_to_work, 5, 'brown', 50, 25, null);
   set_places_style_gradient(travel_time_places_array, travel_time_to_work_places, 'brown', 50, 25, null);
+  //poly_index = 6 is for the hospitals
+  set_tracts_style(tracts_array, food_access, 7, 'coral', null);
 
   //load search bar
   initAutocomplete(map);

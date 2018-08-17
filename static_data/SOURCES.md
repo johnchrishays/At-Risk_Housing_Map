@@ -20,3 +20,6 @@ Sources for the data in this directory:
   * on the map, select New Map > Determination Metrics > Average Travel Time To Work
 * *IHA member hospitals:* collected from the Illinois Health and Hospital Association
   * https://www.team-iha.org/member-resources/hospital-directory#tabs-horizontal1
+* *USDA Food Desserts:* collected from the USDA
+  * https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data.aspx
+  * The metric "LA1and10" and is described by "Low access tract at 1 mile for urban areas and 10 miles for rural areas", "Flag for low access tract at 1 mile for urban areas or 10 miles for rural areas"

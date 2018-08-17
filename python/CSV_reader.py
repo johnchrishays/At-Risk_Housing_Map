@@ -65,5 +65,15 @@ def select_OA_census_tracts():
     f.write(str(place_list))
     f.close()
 
+def select_food_tracts(output_file):
+    df = pd.read_excel('../static_data/indicators/food_access.xlsx', sheet_name='Food Access Research Atlas')
+    il_df = df.loc[df['State'] == "Illinois"]
+    geoids = il_df.loc[il_df['LA1and10'] == 1]['CensusTract']
+    text = ", ".join([str(x) for x in geoids])
+    f = open(output_file, 'w')
+    f.write("[" + text + "]")
+    f.close()
+
 #gradient_kml_to_json('../static_data/indicators/travel_time_to_work.csv', '../static_data/indicators/travel_time_to_work.json', 'Mean travel time to work in minutes, according the US Census Bur')
-gradient_csv_to_json("../static_data/indicators/affordable_market_share_places.csv", "../static_data/indicators/affordable_market_share_places.json", "Affordable market share, as of 2018.")
+#gradient_csv_to_json("../static_data/indicators/affordable_market_share_places.csv", "../static_data/indicators/affordable_market_share_places.json", "Affordable market share, as of 2018.")
+select_food_tracts('..//static_data/indicators/food_access.json')

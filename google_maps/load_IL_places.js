@@ -1,4 +1,5 @@
 var places = require('../shapefiles/IL_places/IL_places.json');
+places = places.sort(function(a, b){return a.name > b.name})
 
 export default function load_places(map){
   var places_array = [];
