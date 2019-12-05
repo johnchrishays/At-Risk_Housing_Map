@@ -3,10 +3,6 @@ A document to explain technical aspects of how to use the tool and how it was ma
 # How to use it
 To open the tool, double click /dist/index.html or drag the file to your browser. Alternately, you can go to: https://mhl-at-risk-housing.000webhostapp.com. Click on the buttons labeled "Opportunity Zones", etc. to view the data. Explanations of the definitions of each of the datatypes are in the REPORT.md file. If you are looking for the original data, go to the relevant folder in /static_data/. You can also see links to my sources in the SOURCE.md file in /static_data/.
 
-# IMPORTANT: The tool works best in Safari or Firefox. Functionality may not work entirely in other browsers, especially old ones like Internet Explorer.
-
-WARNING: Do not move files or folders around in the At-Risk Housing Intersections and Indicators directory. This will mess up the tool.
-
 # Directory Organization
 * *dist:* Directory with top-level html and bundle.js files.
 * *node_modules:* I used npm to import modules. This folder has those modules and dependencies.
@@ -18,4 +14,4 @@ WARNING: Do not move files or folders around in the At-Risk Housing Intersection
 * *REPORT.md:* This contains my findings and use specifications from the project.
 
 # Developer Notes
-* I used webpack to bundle my modules. Most of the time I used '''npm run develop''' or '''npm run build''' to call webpack. Look at package.json or webpack.config.js if you are curious.
+* I used webpack to bundle my modules. Most of the time I used `npm run develop` or `npm run build` to call webpack. Look at package.json or webpack.config.js if you are curious.
