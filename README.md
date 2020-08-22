@@ -1,7 +1,7 @@
 A document to explain technical aspects of how to use the tool and how it was made.
 
 # How to use it
-To open the tool, double click /dist/index.html or drag the file to your browser. Alternately, you can go to: https://mhl-at-risk-housing.000webhostapp.com. Click on the buttons labeled "Opportunity Zones", etc. to view the data. Explanations of the definitions of each of the datatypes are in the REPORT.md file. If you are looking for the original data, go to the relevant folder in /static_data/. You can also see links to my sources in the SOURCE.md file in /static_data/.
+To open the tool, double click /dist/index.html or drag the file to your browser. Alternately, you can go to: https://mhl-at-risk-housing.000webhostapp.com (update: now archived). Click on the buttons labeled "Opportunity Zones", etc. to view the data. Explanations of the definitions of each of the datatypes are in the REPORT.md file. If you are looking for the original data, go to the relevant folder in /static_data/. You can also see links to my sources in the SOURCE.md file in /static_data/.
 
 # Directory Organization
 * *dist:* Directory with top-level html and bundle.js files.
